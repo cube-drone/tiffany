@@ -29,6 +29,13 @@
 		<![endif]-->
 
         <style type='text/css'>
+            
+            a{
+                color: #3e8e8f;
+                font-family: 'Trend Sans One', TrendSansOne, Helvetica !important;
+                text-transform: uppercase;
+            }
+
             #banner{
                 max-width: 100%;
                 max-height: 100%;
@@ -38,11 +45,12 @@
                 color: #676767;
                 text-align: right;
             }
-            .title h2{
+            h2{
                 font-family: 'Trend Slab One', TrendSlabOne, Helvetica !important;
             }
-            .title h3{
+            h3{
                 font-family: 'Trend Sans One', TrendSansOne, Helvetica !important;
+                padding-top: 5px !important;
             }
             section{
                 height: 600px;
@@ -51,6 +59,14 @@
             .main_image{
                 margin-top: 7em !important;
                 display: block;
+            }
+
+            .sl{ /* small letter */
+                font-size: 30px !important;
+            }
+
+            .clickme:hover{
+                border: 1px dotted #444;
             }
 
             * img{
@@ -65,29 +81,62 @@
 
             .tiff_creative{
                 position: absolute;
-                bottom: 0;
-                left: 0;
+                bottom: 30px;
+                left: 30px;
                 max-width: 100% !important;
                 max-height: 100% !important;
             }
+            .tiff_contact{
+                position: absolute;
+                bottom: 36px;
+                right: 30px;
+                text-align: right;
+                max-width: 100% !important;
+                max-height: 100% !important;
+            }
+
+            #side-by-side{
+                width: 100%;
+                margin: 0;
+                margin-top: 25px;
+                padding: 0;
+            }
+
+            #side-by-side li:first-of-type{
+                margin-left: 0px;
+            }
+
+            #side-by-side li{
+                list-style-type: none;
+                display: inline;
+                margin: 0;
+                margin-left: 40px;
+                padding: 0;
+            }
+
+            #side-by-side li img{
+            }
+
+            #main{
+                background: none;
+            }
+
+            section{
+                background: white;
+                padding: 30px !important;
+            }
+
+
             /*********************************************
              * NAVIGATION CONTROLS
              *********************************************/
             .reveal .controls div.navigate-left,
             .reveal .controls div.navigate-left.enabled {
-              border-right-color: #8adadb; }
+              border-right-color: #3e8e8f; }
 
             .reveal .controls div.navigate-right,
             .reveal .controls div.navigate-right.enabled {
-              border-left-color: #8adadb; }
-
-            .reveal .controls div.navigate-up,
-            .reveal .controls div.navigate-up.enabled {
-              border-bottom-color: #8adadb; }
-
-            .reveal .controls div.navigate-down,
-            .reveal .controls div.navigate-down.enabled {
-              border-top-color: #8adadb; }
+              border-left-color: #3e8e8f; }
 
             .reveal .controls div.navigate-left.enabled:hover {
               border-right-color: #8adadb; }
@@ -95,11 +144,6 @@
             .reveal .controls div.navigate-right.enabled:hover {
               border-left-color: #8adadb; }
 
-            .reveal .controls div.navigate-up.enabled:hover {
-              border-bottom-color: #8adadb; }
-
-            .reveal .controls div.navigate-down.enabled:hover {
-              border-top-color: #8adadb; }
 
             /*********************************************
              * PROGRESS BAR
@@ -125,195 +169,222 @@
 
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
-				<section data-background="images/subtle_white_feathers.png" data-background-repeat="repeat" data-background-size="500px">
-                    <img id='banner' src="images/banner.jpg">
+
+                <!-- Front Page --> 
+				<section id='main' data-background="images/subtle_white_feathers.png" data-background-repeat="repeat" data-background-size="500px">
+                    <img id='banner' src="images/Final/Banner/Elephant_Banner.jpg">
+                    <ul id='side-by-side'>
+                        <li><a href='#/print'><img src='images/Final/Banner/Print_Bttn.png' /></a></li>
+                        <li><a href='#/illustration'><img src='images/Final/Banner/Illustration_Bttn.png' /></a></li>
+                        <li><a href='#/web'><img src='images/Final/Banner/Web_Bttn.png' /></a></li>
+                    </ul>
 				</section>
-                <section>
+                
+                <!-- TUGO -->
+				<section id="print" data-background="images/subtle_white_feathers.png" data-background-repeat="repeat" data-background-size="500px">
                     <div class='title'>
-                        <h2>Puffed Up Douchecaptain</h2>
-                        <h3>Where Water Meets This Assbutt</h3>
+                        <h2 >T<span class='sl'>u</span>G<span class='sl'>o</span> Travel Insurance</h2>
+                        <h3>Rebrand Partner Notification Package</h3>
                     </div>
-                    <img class='main_image' src='images/tiff_content_1/0.jpg' />
-                    <!-- 
-                    <a class='main_image' href='images/satyr.jpg' data-lightbox='satyr' data-title="One">
-                        <img src='images/satyr.jpg'>
-                    </a>
-                    <a href='images/bunny_sample_2.jpg' style='display:none;' data-lightbox='satyr' data-title="Two">
-                    </a>
-                    <a href='images/sample_tall.jpg' style='display:none;' data-lightbox='satyr' data-title="Three">
-                    </a>
-                    -->
+                    <img class='main_image' src='images/Final/Graphic/Tiiff-website11.jpg' />
                     
                     <img class='tiff_creative' src="images/tiff_creative.jpg">
                 </section>
-                <section>
+				<section data-background="images/subtle_white_feathers.png" data-background-repeat="repeat" data-background-size="500px">
                     <div class='title'>
-                        <h2>Saucy!</h2>
-                        <h3>And here when I describe my friends as 'pan-asian' I'm the racist</h3>
+                        <h2 >T<span class='sl'>u</span>G<span class='sl'>o</span> Travel Insurance</h2>
+                        <h3>Click! Employee Newsletter</h3>
                     </div>
-                    <img class='main_image' src="images/tiff_content_1/1.jpg">
+                    
+                    <a class='main_image clickme' href='images/Final/Graphic/Tiiff-website12.jpg' data-lightbox='click_newsletter' data-title="Click! cover &amp; Tough Mudder spread">
+                        <img src='images/Final/Graphic/Tiiff-website12.jpg'>
+                        <p class='clickinfo'>See more</p>
+                    </a>
+                    
+                    <a href="images/Final/Graphic/Tiiff-website13.jpg" style='display:none;' data-lightbox='click_newsletter' data-title="Click! rebrand spread &amp; infographic"></a>
+
                     <img class='tiff_creative' src="images/tiff_creative.jpg">
                 </section>
-                <section>
+				<section data-background="images/subtle_white_feathers.png" data-background-repeat="repeat" data-background-size="500px">
                     <div class='title'>
-                        <h2>Chameleon</h2>
-                        <h3>Answering the Age-Old Question: "Can Chameleons Cook", With the Age-Old Answer: "No."</h3>
+                        <h2 >T<span class='sl'>u</span>G<span class='sl'>o</span> Travel Insurance</h2>
+                        <h3>Branding Collateral<h3>
                     </div>
-                    <img class='main_image' src="images/tiff_content_1/2.jpg">
+                    <a class='main_image clickme' href='images/Final/Graphic/Tiiff-website14.jpg' data-lightbox='tugo_collateral' data-title="TuGo backpack &amp; foil-wrapped chocolates">
+                        <img src='images/Final/Graphic/Tiiff-website14.jpg'>
+                        <p class='clickinfo'>See more</p>
+                    </a>
+                    
+                    <a href="images/Final/Graphic/Tiiff-website16.jpg" style='display:none;' data-lightbox='tugo_collateral' data-title="TuGo USB drive with multiple resolution desktop wallpapers"></a>
+                    <a href="images/Final/Graphic/Tiiff-website14-2.jpg" style='display:none;' data-lightbox='tugo_collateral' data-title="TuGo embossed iPad cover giveaway &amp; email banners"></a>
+                    <a href="images/Final/Graphic/Tiiff-website17.jpg" style='display:none;' data-lightbox='tugo_collateral' data-title="TuGo airline trolley"></a>
+
                     <img class='tiff_creative' src="images/tiff_creative.jpg">
                 </section>
-                <section>
+				<section data-background="images/subtle_white_feathers.png" data-background-repeat="repeat" data-background-size="500px">
                     <div class='title'>
-                        <h2>Vancouver Island University</h2>
-                        <h3>"Love The Place You Learn" was the second idea for a slogan, after "Stop Peeing In The Stairwells"</h3>
+                        <h2 >T<span class='sl'>u</span>G<span class='sl'>o</span> Travel Insurance</h2>
+                        <h3>Winterfest Posters &amp; E-Vite<h3>
                     </div>
-                    <img class='main_image' src="images/tiff_content_1/3.jpg">
+                    <img class='main_image' src="images/Final/Graphic/Tiiff-website15.jpg">
                     <img class='tiff_creative' src="images/tiff_creative.jpg">
                 </section>
-                <section>
-                    <div class='title'>
-                        <h2>Lovell Rugby</h2>
-                        <h3>Don't Let Programmers Write Copy. It's A Mistake.</h3>
-                    </div>
-                    <img class='main_image' src="images/tiff_content_1/4.jpg">
-                    <img class='tiff_creative' src="images/tiff_creative.jpg">
-                </section>
-                <section>
-                    <div class='title'>
-                        <h2>Merge Condoms</h2>
-                        <h3>0.1% of Highway Merges End In Tragic Accidents</h3>
-                    </div>
-                    <img class='main_image' src="images/tiff_content_1/5.jpg">
-                    <img class='tiff_creative' src="images/tiff_creative.jpg">
-                </section>
-                <section>
-                    <div class='title'>
-                        <h2>Super Pretty Animal Silhouettes</h2>
-                        <h3>They Look Very Nice. </h3>
-                    </div>
-                    <img class='main_image' src="images/tiff_content_1/6.jpg">
-                    <img class='tiff_creative' src="images/tiff_creative.jpg">
-                </section>
-                <section>
-                    <div class='title'>
-                        <h2>This Girl</h2>
-                        <h3>Somebody Put Food Colouring In Her Showerhead.</h3>
-                    </div>
-                    <img class='main_image' src="images/tiff_content_1/7.jpg">
-                    <img class='tiff_creative' src="images/tiff_creative.jpg">
-                </section>
-                <section>
-                    <div class='title'>
-                        <h2>Yggdrasil</h2>
-                        <h3>"Can you use it in a sentence?"</h3>
-                    </div>
-                    <img class='main_image' src="images/tiff_content_1/8.jpg">
-                    <img class='tiff_creative' src="images/tiff_creative.jpg">
-                </section>
-                <section>
-                    <div class='title'>
-                        <h2>For Whom The Bell Tolls</h2>
-                        <h3>If you haven't punched me yet, Tiffany, thank you. </h3>
-                    </div>
-                    <img class='main_image' src="images/tiff_content_1/9.jpg">
-                    <img class='tiff_creative' src="images/tiff_creative.jpg">
-                </section>
-                <section>
-                    <div class='title'>
-                        <h2>Sue Shi</h2>
-                        <h3>She's Wearing a Pearl Necklace</h3>
-                    </div>
-                    <img class='main_image' src="images/tiff_content_1/10.jpg">
-                    <img class='tiff_creative' src="images/tiff_creative.jpg">
-                </section>
-                <section>
-                    <div class='title'>
-                        <h2>Look, A Bunny!</h2>
-                        <h3>Who's a bunny? Who's a cute little bunny?</h3>
-                    </div>
-                    <img class='main_image' src="images/tiff_content_1/11.jpg">
-                    <img class='tiff_creative' src="images/tiff_creative.jpg">
-                </section>
-                <section>
-                    <div class='title'>
-                        <h2>30 Bidets Later</h2>
-                        <h3>Ha ha! Squirting water!</h3>
-                    </div>
-                    <img class='main_image' src="images/tiff_content_1/12.jpg">
-                    <img class='tiff_creative' src="images/tiff_creative.jpg">
-                </section>
-                <section>
-                    <div class='title'>
-                        <h2>A Laughably Ineffective Towel</h2>
-                        <h3>Even Arthur Dent would be embarassed. </h3>
-                    </div>
-                    <img class='main_image' src="images/tiff_content_1/13.jpg">
-                    <img class='tiff_creative' src="images/tiff_creative.jpg">
-                </section>
-                <section>
-                    <div class='title'>
-                        <h2>Before and After</h2>
-                        <h3>Can you count 6 differences betwen the two pictures?</h3>
-                    </div>
-                    <img class='main_image' src="images/tiff_content_1/14.jpg">
-                    <img class='tiff_creative' src="images/tiff_creative.jpg">
-                </section>
-                <section>
-                    <div class='title'>
-                        <h2>Blu Water</h2>
-                        <h3>I don't get it</h3>
-                    </div>
-                    <img class='main_image' src="images/tiff_content_1/15.jpg">
-                    <img class='tiff_creative' src="images/tiff_creative.jpg">
-                </section>
-                <section>
+
+                <!-- BLU -->
+				<section data-background="images/subtle_white_feathers.png" data-background-repeat="repeat" data-background-size="500px">
                     <div class='title'>
                         <h2>Blu Bathworks</h2>
-                        <h3>Where Water Meets Mismanagement</h3>
+                        <h3>2014 Pricelist</h3>
                     </div>
-                    <img class='main_image' src="images/tiff_content_1/16.jpg">
+                    <img class='main_image' src="images/Final/Graphic/Tiiff-website10.jpg">
                     <img class='tiff_creative' src="images/tiff_creative.jpg">
                 </section>
-                <section>
+                
+				<section data-background="images/subtle_white_feathers.png" data-background-repeat="repeat" data-background-size="500px">
                     <div class='title'>
-                        <h2>Here Are Some Magazines I Didn't Design</h2>
-                        <h3>But I Have An Ad In Them So It's Relevant, I Promise</h3>
+                        <h2>Blu Bathworks</h2>
+                        <h3>2013 Pricelist &amp; Catalogue</h3>
                     </div>
-                    <img class='main_image' src="images/tiff_content_1/17.jpg">
+                    <img class='main_image' src="images/Final/Graphic/Tiiff-website08.jpg">
                     <img class='tiff_creative' src="images/tiff_creative.jpg">
                 </section>
-                <section>
+                
+				<section data-background="images/subtle_white_feathers.png" data-background-repeat="repeat" data-background-size="500px">
                     <div class='title'>
-                        <h2>Blu Pricelist</h2>
-                        <h3>If you have to ask, you can't afford it.</h3>
+                        <h2>Blu Bathworks</h2>
+                        <h3>2012 Pricelist &amp; Catalogue</h3>
                     </div>
-                    <img class='main_image' src="images/tiff_content_1/18.jpg">
+                    <img class='main_image' src="images/Final/Graphic/Tiiff-website09.jpg">
                     <img class='tiff_creative' src="images/tiff_creative.jpg">
                 </section>
-                <section>
+                
+				<section data-background="images/subtle_white_feathers.png" data-background-repeat="repeat" data-background-size="500px">
                     <div class='title'>
-                        <h2>The Pricelist Again</h2>
-                        <h3>If you aren't tired of it from the last slide</h3>
+                        <h2>Blu Bathworks</h2>
+                        <h3>Magazine Advertisements</h3>
                     </div>
-                    <img class='main_image' src="images/tiff_content_1/19.jpg">
+                    <a class='main_image clickme' href='images/Final/Graphic/Tiiff-website07.jpg' data-lightbox='magazine' data-title="2012-2014 Blu Bathworks magazine advertising">
+                        <img src='images/Final/Graphic/Tiiff-website07.jpg'>
+                        <p class='clickinfo'>See more</p>
+                    </a>
+                    
+                    <a href="images/Final/Graphic/magazine/Blumag_1.jpg" style='display:none;' data-lightbox='magazine' data-title="aman&#183;puri collection"></a>
+                    <a href="images/Final/Graphic/magazine/Blumag_2.jpg" style='display:none;' data-lightbox='magazine' data-title="blu&#183;stone tub &amp; opus faucet"></a>
+                    <a href="images/Final/Graphic/magazine/Blumag_3.jpg" style='display:none;' data-lightbox='magazine' data-title="Embossed blu&#183;stone tub with pur&#183;2 tub-filler"></a>
+                    <a href="images/Final/Graphic/magazine/Blumag_4.jpg" style='display:none;' data-lightbox='magazine' data-title="coco blu&#183;stone tub in lime with pur&#183;2 tub-filler"></a>
+                    <a href="images/Final/Graphic/magazine/Blumag_5.jpg" style='display:none;' data-lightbox='magazine' data-title="aman&#183;puri 1 blu&#183;stone tub with modular recessed shelving"></a>
                     <img class='tiff_creative' src="images/tiff_creative.jpg">
                 </section>
-                <section>
+                
+				<section data-background="images/subtle_white_feathers.png" data-background-repeat="repeat" data-background-size="500px">
                     <div class='title'>
-                        <h2>The 2014 Pricelist</h2>
-                        <h3>Look at that sweet binding!</h3>
+                        <h2>Blu Bathworks</h2>
+                        <h3><acronym title='International Contemporary Furniture Festival'>ICFF</acronym> Promotional Water Bottle</h3>
                     </div>
-                    <img class='main_image' src="images/tiff_content_1/20.jpg">
+                    <img class='main_image' src="images/Final/Graphic/Tiiff-website05-2.jpg">
                     <img class='tiff_creative' src="images/tiff_creative.jpg">
                 </section>
-                <section>
+                
+				<section data-background="images/subtle_white_feathers.png" data-background-repeat="repeat" data-background-size="500px">
                     <div class='title'>
-                        <h2>Norse Universe Poster</h2>
-                        <h3>Infographic</h3>
+                        <h2>Blu Bathworks</h2>
+                        <h3><acronym title='International Contemporary Furniture Festival'>ICFF</acronym> Trade Show</h3>
                     </div>
-                    <p class='main_image'> I YAM TAIXT </p>
+                    <img class='main_image' src="images/Final/Graphic/Tiiff-website05-1.jpg">
                     <img class='tiff_creative' src="images/tiff_creative.jpg">
                 </section>
+                
+				<section data-background="images/subtle_white_feathers.png" data-background-repeat="repeat" data-background-size="500px">
+                    <div class='title'>
+                        <h2>Blu Bathworks</h2>
+                        <h3>blu&#183;stone Sample Kit</h3>
+                    </div>
+                    <img class='main_image' src="images/Final/Graphic/Tiiff-website06.jpg">
+                    <img class='tiff_creative' src="images/tiff_creative.jpg">
+                </section>
+                
+				<section data-background="images/subtle_white_feathers.png" data-background-repeat="repeat" data-background-size="500px">
+                    <div class='title'>
+                        <h2>Blu Bathworks</h2>
+                        <h3>High Resolution Image Touchups</h3>
+                    </div>
+                    <a class='main_image clickme' href='images/Final/Graphic/Tiiff-website04.jpg' data-lightbox='touchups' data-title="Photo modifications to reflect updated product catalogue">
+                        <img src='images/Final/Graphic/Tiiff-website04.jpg'>
+                        <p class='clickinfo'>See more</p>
+                    </a>
+                    
+                    <a href="images/Final/Graphic/Tiiff-website03.jpg" style='display:none;' data-lightbox='touchups' data-title="Photo modifications to reflect updated product catalogue"></a>
+                    <img class='tiff_creative' src="images/tiff_creative.jpg">
+                </section>
+                
+				<section data-background="images/subtle_white_feathers.png" data-background-repeat="repeat" data-background-size="500px">
+                    <div class='title'>
+                        <h2>Blu Bathworks</h2>
+                        <h3>Technical Specifications &amp; Installation Guides</h3>
+                    </div>
+                    <img class='main_image' src="images/Final/Graphic/Tiiff-website02.jpg">
+                    <img class='tiff_creative' src="images/tiff_creative.jpg">
+                </section>
+                
+				<section id='illustration' data-background="images/subtle_white_feathers.png" data-background-repeat="repeat" data-background-size="500px">
+                    <div class='title'>
+                        <h2>Satyr</h2>
+                        <h3>Art Print</h3>
+                    </div>
+                    <img class='main_image' src="images/Final/Illustration/satyr.jpg">
+                    <img class='tiff_creative' src="images/tiff_creative.jpg">
+                </section>
+                
+				<section data-background="images/subtle_white_feathers.png" data-background-repeat="repeat" data-background-size="500px">
+                    <div class='title'>
+                        <h2>Garden Animal Collection</h2>
+                        <h3>Sparrow'd</h3>
+                    </div>
+                    <img class='main_image' src="images/Final/Illustration/Tiiff-website01.jpg">
+                    <img class='tiff_creative' src="images/tiff_creative.jpg">
+                </section>
+                
+				<section data-background="images/subtle_white_feathers.png" data-background-repeat="repeat" data-background-size="500px">
+                    <div class='title'>
+                        <h2>Kris Kringle Craft-Fair Cards</h2>
+                        <h3>Brought to you by: Alliteration</h3>
+                    </div>
+                    <img class='main_image' src="images/Final/Illustration/silhouette.jpg">
+                    <img class='tiff_creative' src="images/tiff_creative.jpg">
+                </section>
+                
+				<section data-background="images/subtle_white_feathers.png" data-background-repeat="repeat" data-background-size="500px">
+                    <div class='title'>
+                        <h2>Mermaid</h2>
+                        <h3>She prefers 'Merperson'</h3>
+                    </div>
+                    <img class='main_image' src="images/Final/Illustration/Tiiff-website00.jpg">
+                    <img class='tiff_creative' src="images/tiff_creative.jpg">
+                </section>
+				
+                <section id="web" data-background="images/subtle_white_feathers.png" data-background-repeat="repeat" data-background-size="500px">
+                    <div class='title'>
+                        <h2>Nyla Boutique</h2>
+                        <h3></h3>
+                    </div>
+                    <img class='main_image' src="images/Final/Web/Tiiff-website01.png">
+                    <img class='tiff_creative' src="images/tiff_creative.jpg">
+                </section>
+                
+				<section data-background="images/subtle_white_feathers.png" data-background-repeat="repeat" data-background-size="500px">
+                    <div class='title'>
+                        <h2>Tiffany Thoreson</h2>
+                    </div>
+                    <ul>
+                    </ul>
+                    <div class='tiff_contact'>
+                        <h3>778-855-2088</h3>
+                        <h3>tiffanythoreson@gmail.com</h3>
+                    </div>
+                    <img class='tiff_creative' src="images/tiff_creative.jpg">
+                </section>
+
+                
 				
 			</div>
 
