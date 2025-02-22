@@ -4,8 +4,9 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>Tiffany Thoreson</title>
-        <! --built: January 2019 -->
+        <!--built: January 2019 -->
         <!-- updated: June 2020 -->
+        <!-- updated again: February 2025 -->
         <meta name="description" content="Tiffany Thoreson: CG Generalist, Graphic Designer, Nerd">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -19,6 +20,70 @@
         <link rel="shortcut icon" type="image/png" href="./favicon.png"/>
 
         <script src="lightbox/js/lightbox-plus-jquery.min.js"></script>
+
+        <script src="js/murmurhash.js"></script>
+
+        <script>
+            async function checkPassword(){
+                console.log("checking password");
+                var password = document.getElementById('password').value;
+
+                // look, the very fact that you're reading this means you're already,
+                // like, 90% of the way to getting the password
+                // but I didn't just leave it sitting here in plaintext
+                // but this is some real chump-grade security
+                // like, I'm not even using a salt, and murmurhash is not a secure hashing algorithm
+                // and also the server is just serving up the video files without any kind of authentication
+                // and yet: it's not trivial to figure this out
+                // like, you can't just _read_ the password from the source
+                // it is BETTER than plaintext
+                // but only slightly
+                // it's the sort of thing that I could do in a few minutes
+                // but it's also the sort of thing that would stump a lot of people
+                // and that's the point
+                // (well, that and finding the password is not terribly difficult)
+
+                let digest = murmurhash3_32_gc(password, 0);
+
+                if(digest == "740995911"){
+                    // determine the filename of the video
+                    const digest2 = murmurhash3_32_gc(password, 1);
+                    const filename = `https://wwwww.gooble.email/tiff-video/${digest2}.mp4`;
+
+                    // replace the contents of the password block with the video
+                    const passwordBlocked = document.querySelector('.password-blocked');
+                    passwordBlocked.innerHTML = `<video controls><source src="${filename}" type="video/mp4" /></video>`;
+
+                    // remove the '.transparent' class from the password-blocked div
+                    const passwordBlock = document.querySelector('.password-block');
+                    passwordBlock.classList.remove('transparent');
+
+                    // replace the contents of the password controls with a loading
+                    const passwordControls = document.querySelector('.password-controls');
+                    passwordControls.innerHTML = `<div class="loader"></div>`;
+
+                    // wait a moment for the video to load
+                    const passwordBlockedVideo = passwordBlocked.querySelector('video');
+                    await passwordBlockedVideo.load();
+
+                    // wait for an extra 500ms (while we test loading)
+                    await new Promise(resolve => setTimeout(resolve, 500));
+
+                    // remove the password-block div from the DOM
+                    passwordBlock.parentNode.removeChild(passwordBlock);
+
+                    await passwordBlockedVideo.play();
+                }
+
+            }
+
+            document.addEventListener('DOMContentLoaded', function(){
+                console.log("DOM loaded");
+                var password = document.getElementById('password');
+                password.addEventListener('keyup', checkPassword);
+                password.addEventListener('change', checkPassword);
+            });
+        </script>
 
     </head>
     <body>
@@ -36,8 +101,7 @@
 
                     <a href="https://ipsum.artstation.com/"><img src="./img/artstation_logo.png" style="width: 30px; height: 30px;"></img></a>
 
-                    <!-- TODO: cv link -->
-                    <a href="Resume_TiffanyThoreson.pdf" class='cv'>CV</a>
+                    <a href="resume/Resume2025_TiffanyThoreson.pdf" class='cv'>CV</a>
 
                 </div>
             </div>
@@ -46,57 +110,92 @@
         <div id="content">
 
             <div class="content-group">
-                <h3>Reel</h3>
+                <h3>Episodic 3D Animation</h3>
 
-                <div class="content-display">
-                    <iframe src="https://player.vimeo.com/video/440492639" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                <div class="password-group">
+                    <div class="password-block transparent">
+                        <div class="password-controls">
+                            <input type="password" id="password" placeholder="Enter password" onchange="checkPassword" onkeyup="checkPassword"/>
+                        </div>
+                    </div>
+                    <div class="password-blocked">
+                        <img src="./img/reel-block-2025.png" />
+                    </div>
                 </div>
             </div>
 
             <div class="content-group">
-                <h3>Feature Films</h3>
+                <hr/>
 
                 <div class="poster-grid">
+                    <div class="movie-poster">
+                        <img src="./img/show_icons_2025/spidey_thumb.png">
+                        <h4>Spidey and His Amazing Friends (2021 - Present)</h4>
+                    </div>
+                    <div class="movie-poster">
+                        <img src="./img/show_icons_2025/zombies_thumb.png">
+                        <h4>Zombies: The Re-Animated Series (2024 - Present)</h4>
+                    </div>
+                    <div class="movie-poster">
+                        <img src="./img/show_icons_2025/lps_thumb.png">
+                        <h4>LEGO Pixar: Bricktoons (2024)</h4>
+                    </div>
+                    <div class="movie-poster">
+                        <img src="./img/show_icons_2025/mlp_Thumb.png">
+                        <h4>My Little Pony: Make Your Mark (2022)</h4>
+                    </div>
+                    <div class="movie-poster">
+                        <img src="./img/show_icons_2025/unknown_disney.png">
+                        <h4>Undisclosed LEGO Project (2025)</h4>
+                    </div>
 
+                </div>
+            </div>
+
+            <div class="content-group">
+                <h3>Live Action VFX</h3>
+                <video controls preload="metadata">
+                    <source src="https://wwwww.gooble.email/tiff-video/reel_2020.mp4" type="video/mp4" />
+                </video>
+            </div>
+
+            <div class="content-group">
+                <hr/>
+
+                <div class="poster-grid">
+                    <div class="movie-poster">
+                        <img src="./img/posters/noelle.jpg">
+                        <h4>Noelle (2020)</h4>
+                    </div>
+                    <div class="movie-poster">
+                        <img src="./img/posters/dolittle.jpg">
+                        <h4>Dolittle (2020)</h4>
+                    </div>
+                    <div class="movie-poster">
+                        <img src="./img/posters/adastra.jpg">
+                        <h4>Ad Astra (2019)</h4>
+                    </div>
+                    <div class="movie-poster">
+                        <img src="./img/captures/mp5.png">
+                        <h4>Detective Pikachu (2019)</h4>
+                    </div>
+                    <div class="movie-poster">
+                        <img src="./img/captures/mp4.png">
+                        <h4>Aquaman (2018)</h4>
+                    </div>
+                    <div class="movie-poster">
+                        <img src="./img/captures/mp3.png">
+                        <h4>Fifty Shades Freed (2018)</h4>
+                    </div>
+                    <div class="movie-poster">
+                        <img src="./img/captures/mp2.png">
+                        <h4>A Wrinkle in Time (2018)</h4>
+                    </div>
                     <div class="movie-poster">
                         <img src="./img/captures/mp1.png">
                         <h4>Justice League (2017)</h4>
                     </div>
 
-                    <div class="movie-poster">
-                        <img src="./img/captures/mp2.png">
-                        <h4>A Wrinkle in Time (2018)</h4>
-                    </div>
-
-                    <div class="movie-poster">
-                        <img src="./img/captures/mp3.png">
-                        <h4>Fifty Shades Freed (2018)</h4>
-                    </div>
-
-                    <div class="movie-poster">
-                        <img src="./img/captures/mp4.png">
-                        <h4>Aquaman (2018)</h4>
-                    </div>
-
-                    <div class="movie-poster">
-                        <img src="./img/captures/mp5.png">
-                        <h4>Detective Pikachu (2019)</h4>
-                    </div>
-
-                    <div class="movie-poster">
-                        <img src="./img/posters/adastra.jpg">
-                        <h4>Ad Astra (2019)</h4>
-                    </div>
-
-                    <div class="movie-poster">
-                        <img src="./img/posters/dolittle.jpg">
-                        <h4>Dolittle (2020)</h4>
-                    </div>
-
-                    <div class="movie-poster">
-                        <img src="./img/posters/noelle.jpg">
-                        <h4>Noelle (2020)</h4>
-                    </div>
                 </div>
             </div>
 
@@ -139,15 +238,16 @@
             <div class="content-group">
                 <h3>Inktober Daily Drawings</h3>
 
-                <div class="tall-4-grid">
-                    <img src="./img/captures/ink1.png">
-                    <img src="./img/captures/ink2.png">
-                    <img src="./img/captures/ink3.png">
-                    <img src="./img/captures/ink4.png">
-                    <img src="./img/captures/ink5.png">
-                    <img src="./img/captures/ink6.png">
-                    <img src="./img/captures/ink7.png">
-                    <img src="./img/captures/ink8.png">
+                <div class="square-4-grid">
+                    <a href="./img/speed_sketch_2025/coffee.jpg" data-lightbox="inktober"><img src="./img/speed_sketch_2025/coffee.jpg"></a>
+                    <a href="./img/speed_sketch_2025/ethereal.png" data-lightbox="inktober"><img src="./img/speed_sketch_2025/ethereal.png"></a>
+                    <a href="./img/speed_sketch_2025/candle.jpg" data-lightbox="inktober"><img src="./img/speed_sketch_2025/candle.jpg"></a>
+                    <a href="./img/speed_sketch_2025/wheat.jpg" data-lightbox="inktober"><img src="./img/speed_sketch_2025/wheat.jpg"></a>
+                    <a href="./img/speed_sketch_2025/swamp.jpg" data-lightbox="inktober"><img src="./img/speed_sketch_2025/swamp.jpg"></a>
+                    <a href="./img/speed_sketch_2025/dead.jpg" data-lightbox="inktober"><img src="./img/speed_sketch_2025/dead.jpg"></a>
+                    <a href="./img/speed_sketch_2025/growth.png" data-lightbox="inktober"><img src="./img/speed_sketch_2025/growth.png"></a>
+                    <a href="./img/speed_sketch_2025/sword.jpg" data-lightbox="inktober"><img src="./img/speed_sketch_2025/sword.jpg"></a>
+                    <a href="./img/speed_sketch_2025/plague.png" data-lightbox="inktober"><img src="./img/speed_sketch_2025/plague.png"></a>
                 </div>
             </div>
 
